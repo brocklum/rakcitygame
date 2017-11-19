@@ -17,7 +17,7 @@ h2, h1{
 	height: 400px;
 	width: 100%;
 }
-.col-md-12{
+.twelve{
 	padding-left: 3em !important;
 	padding-right: 3em !important;
 	padding-top: 0em !important;
@@ -36,3 +36,134 @@ h2, h1{
 #headContainer {
 	margin-left: -20px;
 }
+
+
+/*kevin*/
+
+
+/*STYLES FOR RANKINGS.HTML*/
+
+.header {
+	background-color: rgb(238, 238, 238);
+	width: 100%;
+    color: rgb(130, 130, 130);
+}
+
+.btnkev {
+
+    color:white;
+    background-color:#5F9AE0;
+    border-radius:7px;
+    padding-left: 35px;
+    padding-right:35px;
+    border-style:none;
+    padding-top:3px;
+    padding-bottom:3px;
+    font-size:20px;
+
+
+}
+
+.subtitle {
+	text-align: center;
+	color: rgb(130,130,130);
+}
+
+.subtitle1 {
+	color:rgb(130,130,130);
+	margin-bottom:25px;
+
+}
+
+.imgheadshot {
+	height:100px;
+	width:100px;
+	border-style:solid;
+	border-radius:50%;
+	margin-top:20px;
+	border-color:#FECC93;
+	background-color:white;
+
+}
+
+.box {
+	border-style:none;
+	border-radius:10px;
+	border-color:none;
+	margin-bottom: 20px;
+	height:150px;
+	padding-bottom:150px;
+
+
+
+}
+
+
+.box-yellow {
+	background-color:#70BE42;
+}
+
+.box-orange {
+	background-color:#FF7B21;
+}
+
+.box-red {
+	background-color:#005DAC;
+}
+.box-blue {
+	background-color:#3ABFDB;
+}
+.name {
+	font-size:25px;
+	font-weight:bold;
+	color:white;
+	margin-left:60px;
+}
+
+.points {
+	margin-top:-50px;
+	font-size:25px;
+	font-weight:bold;
+	color:white;
+	margin-left:150px;
+}
+.trophy {
+	height:75px;
+	width:75px;
+	float:right;
+	border-style:solid;
+	border-radius:50%;
+	background-color:white;
+	margin-bottom:500px;
+	margin-top:-75px;
+
+}
+
+ body{
+  	margin-left: 10px;
+  	margin-right: 10px;
+ 
+	background-image:url("img/colorful-skyline2.jpg");
+	background-repeat: no-repeat;
+	background-size: 65%;
+	background-position: center;
+	background-attachment: fixed;
+  }
+
+  /*-------------------------------------ABOUT.HTML-------------------------------*/
+
+  .abouttitle {
+  	margin-top:250px;
+  	text-align:center;
+  	color:white;
+  	font-weight:bold;
+  	font-size:75px;
+
+
+  }
+
+  .paragraph {  	
+  	background-color:white;
+  	text-align:center;
+
+  }
