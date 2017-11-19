@@ -2,11 +2,15 @@ body, html {
 	margin-left: 10px;
 	margin-right: 10px;
 	
-	background-image:url("img/colorful-skyline.jpg");
+	background-image:url("img/colorful-skyline2.jpg");
 	background-repeat: no-repeat;
 	background-size: 65%;
 	background-position: center;
 	background-attachment: fixed;
+}
+h2, h1{
+	padding: 0.5em;
+	text-align: center !important;
 }
 
 #map {
