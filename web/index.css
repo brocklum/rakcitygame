@@ -1,13 +1,25 @@
 body, html {
 	margin-left: 10px;
 	margin-right: 10px;
+	
+	background-image:url("img/colorful-skyline.jpg");
+	background-repeat: no-repeat;
+	background-size: 65%;
+	background-position: center;
+	background-attachment: fixed;
 }
 
 #map {
 	height: 400px;
 	width: 100%;
 }
-
+.col-md-12{
+	padding-left: 3em !important;
+	padding-right: 3em !important;
+	padding-top: 0em !important;
+	padding-bottom:0em;
+	text-align: center;
+}
 .mybtn {
 	margin-right: 10px;
 }
