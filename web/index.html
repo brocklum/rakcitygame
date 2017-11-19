@@ -33,90 +33,14 @@
 		</div>
 		<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
-		<script>(function(d, s, id) {
-			  var js, fjs = d.getElementsByTagName(s)[0];
-			  if (d.getElementById(id)) return;
-			  js = d.createElement(s); js.id = id;
-			  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=236227416503176';
-			  fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));
-		</script>
-		<script>
-		
-			FB.getLoginStatus(function(response) {
-				statusChangeCallback(response);
-			});
-					
-		  window.fbAsyncInit = function() {
-			FB.init({
-			  appId      : '{your-app-id}',
-			  cookie     : true,
-			  xfbml      : true,
-			  version    : '{latest-api-version}'
-			});
-			  
-			FB.AppEvents.logPageView();   
-			  
-		  };
-
-		  (function(d, s, id){
-			 var js, fjs = d.getElementsByTagName(s)[0];
-			 if (d.getElementById(id)) {return;}
-			 js = d.createElement(s); js.id = id;
-			 js.src = "https://connect.facebook.net/en_US/sdk.js";
-			 fjs.parentNode.insertBefore(js, fjs);
-		   }(document, 'script', 'facebook-jssdk'));
-		</script>
-		<script>
-			firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-				// Handle Errors here.
-				var errorCode = error.code;
-				var errorMessage = error.message;
-				// ...
-			});
-			firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-				// Handle Errors here.
-				var errorCode = error.code;
-				var errorMessage = error.message;
-				// ...
-			});
-			firebase.auth().onAuthStateChanged(function(user) {
-			if (user) {
-			// User is signed in.
-				var displayName = user.displayName;
-				var email = user.email;
-				var emailVerified = user.emailVerified;
-				var photoURL = user.photoURL;
-				var isAnonymous = user.isAnonymous;
-				var uid = user.uid;
-				var providerData = user.providerData;
-				// ...
-			  } else {
-				// User is signed out.
-				// ...
-			  }
-			});
-		</script>
-		<script>
-		  // Initialize Firebase
-		  var config = {
-			apiKey: "AIzaSyD8l_IRPlGrSoMb3Pr3JOP4LQYHj5Bdbe4",
-			authDomain: "rakcitygame.firebaseapp.com",
-			databaseURL: "https://rakcitygame.firebaseio.com",
-			projectId: "rakcitygame",
-			storageBucket: "rakcitygame.appspot.com",
-			messagingSenderId: "590058105329"
-		  };
-		  firebase.initializeApp(config);
-		</script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.0/sweetalert2.all.min.js"></script>
-		<script src="main.js"></script>
+		
 		<!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-  
+  	<script src="main.js"></script>
 	</body>
 
 </html>
