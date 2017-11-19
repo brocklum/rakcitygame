@@ -8,7 +8,7 @@ const url = "https://brocklum.github.io/dogoodcity2/hobodatabase.json";
 const idField = document.getElementById("nameInput");
 let isClicked = false;
 
-const config = {
+var config = {
 	apiKey: "AIzaSyC_Z3zw-U0-LZHmQHxp8RfaLmwq567aSt0",
 	authDomain: "hackwestern-aeebf.firebaseapp.com",
 	databaseURL: "https://hackwestern-aeebf.firebaseio.com",
