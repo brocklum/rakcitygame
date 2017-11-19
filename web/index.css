@@ -1,0 +1,22 @@
+body, html {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#map {
+	height: 400px;
+	width: 100%;
+}
+
+.mybtn {
+	margin-right: 10px;
+}
+.button {
+	border-radius: 10px;
+}
+#beforeButtons {
+	margin: 25px 0px 10px 0px;
+}
+#headContainer {
+	margin-left: -20px;
+}

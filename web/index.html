@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<title>track hobos</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+		<link rel="stylesheet" type="text/css" href="index.css">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.0/sweetalert2.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGWOMXtNjjeXPednse-mGD7pTQVm3agQk&callback=initMap"
+	  type="text/javascript"></script>
+	  	
+	</head>
+	<body>
+		<!--put navbar here-->
+		<h1 class="title">
+			Get Started
+		</h1>
+		<h2 class="subtitle">
+			Let's see where you can help out today! Click the "Where am I Near" button to see places in need of help near you.
+		</h2>
+        <button onClick="getLoc()" class="button is-info is-large" id="near">Where am I Near?</button>
+        <br>
+        <p id="beforeButtons"></p>
+        <div id="buttons" class="field is-grouped"></div>
+		<div id="map"></div>
+		<br>
+		<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyC_Z3zw-U0-LZHmQHxp8RfaLmwq567aSt0",
+		    authDomain: "hackwestern-aeebf.firebaseapp.com",
+		    databaseURL: "https://hackwestern-aeebf.firebaseio.com",
+		    projectId: "hackwestern-aeebf",
+		    storageBucket: "",
+		    messagingSenderId: "1095184407138"
+		  };
+		  firebase.initializeApp(config);
+		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.0/sweetalert2.all.min.js"></script>
+		<script src="main.js"></script>
+	</body>
+
+</html>
