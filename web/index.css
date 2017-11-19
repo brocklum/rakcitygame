@@ -8,7 +8,14 @@ body, html {
 	background-position: center;
 	background-attachment: fixed;
 }
-h2, h1{
+h1{
+	font-weight: normal !important;
+	padding: 0.5em;
+	text-align: center !important;
+	font-size: 1.3em;
+}
+h2{
+	font-weight: normal !important;
 	padding: 0.5em;
 	text-align: center !important;
 }
@@ -23,6 +30,9 @@ h2, h1{
 	padding-top: 0em !important;
 	padding-bottom:0em;
 	text-align: center;
+}
+.inTitle{
+	padding-top: 2em !important;
 }
 .mybtn {
 	margin-right: 10px;
