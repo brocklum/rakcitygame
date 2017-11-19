@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en-US">
 	<head>
-		<title>RakCity - Home</title>
+		<title>RAKCity - Home</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
 		<link rel="stylesheet" type="text/css" href="index.css">
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.0/sweetalert2.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGWOMXtNjjeXPednse-mGD7pTQVm3agQk&callback=initMap"
-	  type="text/javascript"></script>
+		
 	  	<!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,7 +22,7 @@
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#">RakCity</a>
+  <a class="navbar-brand" href="#">RAKCity</a>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
@@ -49,8 +48,13 @@
 		<h1 class="title">
 			Get Started
 		</h1>
+		<form>
+		<h2>Enter your Username:</h2>
+		<input id="nameInput" type="text"><br>
+		
+		</form>
 		<h2 class="subtitle">
-			Let's see where you can help out today! Click the "Where am I Near" button to see places in need of help near you.
+			Let's see where you can help out today! Enter your name then click the "Where am I Near" button to see places in need of help near you.
 		</h2>
         <button onClick="getLoc()" class="button is-info is-large" id="near">Where am I Near?</button>
         <br>
@@ -65,12 +69,12 @@
 		<script>
 		  // Initialize Firebase
 		  var config = {
-		    apiKey: "AIzaSyC_Z3zw-U0-LZHmQHxp8RfaLmwq567aSt0",
-		    authDomain: "hackwestern-aeebf.firebaseapp.com",
-		    databaseURL: "https://hackwestern-aeebf.firebaseio.com",
-		    projectId: "hackwestern-aeebf",
-		    storageBucket: "",
-		    messagingSenderId: "1095184407138"
+			apiKey: "AIzaSyD8l_IRPlGrSoMb3Pr3JOP4LQYHj5Bdbe4",
+			authDomain: "rakcitygame.firebaseapp.com",
+			databaseURL: "https://rakcitygame.firebaseio.com",
+			projectId: "rakcitygame",
+			storageBucket: "rakcitygame.appspot.com",
+			messagingSenderId: "590058105329"
 		  };
 		  firebase.initializeApp(config);
 		</script>
@@ -81,7 +85,8 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-  
+  	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGWOMXtNjjeXPednse-mGD7pTQVm3agQk&callback=initMap"
+	  type="text/javascript"></script>
 	</body>
 
 </html>

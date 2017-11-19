@@ -10,6 +10,20 @@ var markers;
 const url = "https://brocklum.github.io/dogoodcity2/hobodatabase.json";
 var isClicked = false;
 
+var config = {
+	apiKey: "AIzaSyC_Z3zw-U0-LZHmQHxp8RfaLmwq567aSt0",
+	authDomain: "hackwestern-aeebf.firebaseapp.com",
+	databaseURL: "https://hackwestern-aeebf.firebaseio.com",
+	projectId: "hackwestern-aeebf",
+	storageBucket: "",
+	messagingSenderId: "1095184407138"
+};
+if (!firebase.apps.length) {
+	firebase.initializeApp(config);
+}
+
+var database = firebase.database();
+console.log(database);
 
 
 //Creates map and places markers on map based on JSON data
@@ -20,10 +34,25 @@ function initMap() {
 		center: coords,
 		streetViewControl: false
 	});
-	$.getJSON(url, function(data) {
-		hobos = data;
-		placeMarkers();
-	});
+	var request = new XMLHttpRequest();
+	request.open('GET', url, true);
+
+	request.onload = function() {
+	  if (request.status >= 200 && request.status < 400) {
+	    // Success!
+	    hobos = JSON.parse(request.responseText);
+	    placeMarkers();
+	  } else {
+	    // We reached our target server, but it returned an error
+
+	  }
+};
+
+request.onerror = function() {
+  // There was a connection error of some sort
+};
+
+request.send();
 	
 }
 
@@ -86,7 +115,7 @@ function showPosition(position) {
 	var hobosNear = nearMarker();
 	document.getElementById("beforeButtons").innerHTML = "Click a button below if you helped at this location!";
 	for (var i = 0; i < hobosNear.length; i++) {
-		$("#buttons").append("<button value='"+hobosNear[i].id+"'onclick='send(this.value)' class='button is-primary mybtn'>"+hobosNear[i].name+"</button><br>");
+		$("#buttons").append("<button value='"+hobosNear[i].name+"'onclick='send(this.value, `Brock`)' class='button is-primary mybtn'>"+hobosNear[i].name+"</button><br>");
 	}
 }
 
@@ -102,20 +131,32 @@ function nearMarker() {
 }
 
 //Sends the value clicked to the server
-function send(val) {
+function send(name, username) {
 	swal(
 		"Success!",
-		"Your points have been logged for ID: " + val,
+		"Your points have been logged for: " + name,
 		"success"
 	);
-}
+	var points;
+	firebase.database().ref(username).once('value')
+	.then(function(snapshot) {
+		snapshot.forEach(function(childSnapshot) {
+			points = childSnapshot.val();
+			console.log(points);
+		});
+	});
+	setTimeout(function() {
+		if (points == undefined) {
+			firebase.database().ref(username).set({
+				val: 100
+			});		
+		} else {
+			firebase.database().ref(username).set({
+				val: points+100
+			});
+		}		
+	}, 500);
 
-/*
-function writeUserData(userId, name, email, imageUrl) {
-  firebase.database().ref('users/' + userId).set({
-    username: name,
-    email: email,
-    profile_picture : imageUrl
-  });
+
+	
 }
-*/
