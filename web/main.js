@@ -1,6 +1,3 @@
-//TODO
-//send value to server
-
 var userLat;
 var userLng;
 var hobos;
@@ -8,9 +5,10 @@ var map;
 var userMarker;
 var markers;
 const url = "https://brocklum.github.io/dogoodcity2/hobodatabase.json";
-var isClicked = false;
+const idField = document.getElementById("nameInput");
+let isClicked = false;
 
-var config = {
+const config = {
 	apiKey: "AIzaSyC_Z3zw-U0-LZHmQHxp8RfaLmwq567aSt0",
 	authDomain: "hackwestern-aeebf.firebaseapp.com",
 	databaseURL: "https://hackwestern-aeebf.firebaseio.com",
@@ -25,7 +23,6 @@ if (!firebase.apps.length) {
 var database = firebase.database();
 console.log(database);
 
-
 //Creates map and places markers on map based on JSON data
 function initMap() {
 	var coords = {lat: 43.0096, lng: -81.2737};
@@ -34,6 +31,7 @@ function initMap() {
 		center: coords,
 		streetViewControl: false
 	});
+
 	var request = new XMLHttpRequest();
 	request.open('GET', url, true);
 
@@ -43,16 +41,15 @@ function initMap() {
 	    hobos = JSON.parse(request.responseText);
 	    placeMarkers();
 	  } else {
-	    // We reached our target server, but it returned an error
-
+		console.log("We reached target server, but it returned an error.");
 	  }
-};
+	};
 
-request.onerror = function() {
-  // There was a connection error of some sort
-};
+	request.onerror = function() {
+	  console.log("There was a connection error of some sort");
+	};
 
-request.send();
+	request.send();
 	
 }
 
@@ -115,7 +112,7 @@ function showPosition(position) {
 	var hobosNear = nearMarker();
 	document.getElementById("beforeButtons").innerHTML = "Click a button below if you helped at this location!";
 	for (var i = 0; i < hobosNear.length; i++) {
-		$("#buttons").append("<button value='"+hobosNear[i].name+"'onclick='send(this.value, `Brock`)' class='button is-primary mybtn'>"+hobosNear[i].name+"</button><br>");
+		$("#buttons").append("<button value='"+hobosNear[i].name+"'onclick='send(this.value, `" + idField.value + "`)' class='button is-primary mybtn'>"+hobosNear[i].name+"</button><br>");
 	}
 }
 
@@ -132,6 +129,14 @@ function nearMarker() {
 
 //Sends the value clicked to the server
 function send(name, username) {
+	if (username == "") {
+		swal(
+			"Error:",
+			"Please enter a username.",
+			"error"
+		);
+		return;
+	}
 	swal(
 		"Success!",
 		"Your points have been logged for: " + name,
@@ -156,7 +161,4 @@ function send(name, username) {
 			});
 		}		
 	}, 500);
-
-
-	
 }
